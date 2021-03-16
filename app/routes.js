@@ -7,4 +7,8 @@ module.exports = (app) => {
         let Form = require('../src/controllers/Form.js');
         (new Form).print(req, res);
     });
+    app.post('/form', (req, res, next) => {
+        let User = require('../src/controllers/User.js');
+        (new User).process(req, res);
+    });
 };

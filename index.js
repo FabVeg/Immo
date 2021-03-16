@@ -3,12 +3,9 @@ const app = express();
 const path = require('path');
 const config = require('./app/config');
 const mysql      = require('mysql');
-const connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'immo_db'
-});
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.listen(80);
 
  
 //--------------------------------------------------------------------
@@ -34,14 +31,3 @@ app.listen(config.port,() => {
     console.log(`Le serveur est démarré : http://localhost:${config.port}`);
 });
 
-//--------------------------------------------------------------------
-//     Connection à la BDD
-//--------------------------------------------------------------------
-connection.connect(function(err) {
-    if (err) {
-      console.error('error connecting: ' + err.stack);
-      return;
-    }
-   
-    console.log('connected as id ' + connection.threadId);
-  });

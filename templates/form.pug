@@ -5,32 +5,35 @@ block content
         .form-row
             .form-group.col-md-6
                 label(for='inputEmail4') Email
-                input#inputEmail4.form-control(type='email' placeholder='Email')
+                input#inputEmail4.form-control(type='email' placeholder='Email' name="email")
             .form-group.col-md-6
                 label(for='inputPassword4') Mot de passe
-                input#inputPassword4.form-control(type='password' placeholder='Mot de passe')
+                input#inputPassword4.form-control(type='password' placeholder='Mot de passe' name="password")
         .form-floating
-            select#floatingSelect.form-select(aria-label='Civilité')
+            select#floatingSelect.form-select(aria-label='Civilité' name="civility")
                 option(value='1') M.
                 option(value='2') Mme.
             label(for='floatingSelect') Civilité
         .form-group
             label(for='inputName') Nom
-            input#inputAddress.form-control(type='text' placeholder='Duchemin')
+            input#inputAddress.form-control(type='text' placeholder='Duchemin' name="lastname")
         .form-group
             label(for='inputFirstname') Prenom
-            input#inputAddress.form-control(type='text' placeholder='Jean')
+            input#inputAddress.form-control(type='text' placeholder='Jean' name="firstname")
         .form-group
             label(for='inputAddress') Addresse
-            input#inputAddress.form-control(type='text' placeholder='12 rue du chemin')
+            input#inputAddress.form-control(type='text' placeholder='12 rue du chemin' name="adress")
         .form-group
             label(for='inputAddress2') Addresse Suite
-            input#inputAddress2.form-control(type='text' placeholder="Complément d'adresse")
+            input#inputAddress2.form-control(type='text' placeholder="Complément d'adresse" name="adress2")
+        .form-group
+            label(for='Phone') Télelphone
+            input#Phone.form-control(type='text' placeholder="Numéro de téléphone" name="phone")
         .form-row
             .form-group.col-md-6
-                label(for='inputCity') Ville
-                input#inputCity.form-control(type='text')
+                label(for='inputCity' ) Ville
+                input#inputCity.form-control(type='text' name="city")
             .form-group.col-md-2
-                label(for='inputZip') Code Postal
-                input#inputZip.form-control(type='text')
-        button.btn.btn-primary(type='submit') Inscripti
+                label(for='inputZip' ) Code Postal
+                input#inputZip.form-control(type='text' name="zip")
+        button.btn.btn-primary(type='submit') Inscription
