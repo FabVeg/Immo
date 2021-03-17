@@ -1,5 +1,7 @@
 module.exports = class Home {
     print(request, response) {
-        response.render('home');  
+        response.render('home');
+          
     }
+    
 };

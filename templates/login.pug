@@ -1,0 +1,15 @@
+extends layout.pug
+block content
+    .container
+        h1 Connection 
+        form.container(action="" method="post")
+            .form-row
+                .form-group.col-md-6
+                    label(for='inputEmail4') Email
+                    input#inputEmail4.form-control(type='email' placeholder='Email' name="email")
+                .form-group.col-md-6
+                    label(for='inputPassword4') Mot de passe
+                    input#inputPassword4.form-control(type='password' placeholder='Mot de passe' name="password")
+            button.btn.btn-primary(type='submit') Se connecter
+        br
+        button.btn.btn-primary( onclick="") Se deconnecter

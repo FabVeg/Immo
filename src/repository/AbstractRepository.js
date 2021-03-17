@@ -26,4 +26,8 @@ module.exports = class AbstractRepository {
     now() {
         return new Date().toISOString().slice(0,19).replace('T', ' ');
     }
+
+
+
+    
 }

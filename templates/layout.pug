@@ -26,6 +26,19 @@ html(lang="fr")
                             a.nav-link(href='#') Estimer
                         li.nav-item.active
                             a.nav-link(href='form') Inscription
+                        //if session
+                        li.nav-item.active
+                            a.nav-link(href='login') Connexion
+                        //else
+                            li.nav-item.active
+                                a.nav-link(href='deconnexion') Déconnexion
+        - var messages = getMessages()
+            if messages.notify
+                each msg in messages.notify
+                    .alert.alert-info= msg
+            if messages.error
+                each msg in messages.error
+                    .alert.alert-danger= msg
         block content 
     
         block scripts 

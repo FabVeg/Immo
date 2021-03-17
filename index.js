@@ -2,10 +2,25 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const config = require('./app/config');
-const mysql      = require('mysql');
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.listen(80);
+
+
+//--------------------------------------------------------------------
+//      Ajout du midlleware express session
+//--------------------------------------------------------------------
+const session = require('express-session');
+app.use(session({
+    secret: config.appKey, resave:false, saveUninitialized:false, 
+    cookie: {maxAge: 3600000} 
+}));
+//--------------------------------------------------------------------
+//      Ajout du midlleware express flash messages
+//--------------------------------------------------------------------
+const flash = require('express-flash-messages');
+app.use(flash());
+
 
  
 //--------------------------------------------------------------------
@@ -30,4 +45,3 @@ require('./app/routes')(app);
 app.listen(config.port,() => {
     console.log(`Le serveur est démarré : http://localhost:${config.port}`);
 });
-
